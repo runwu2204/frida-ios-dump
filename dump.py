@@ -30,7 +30,7 @@ if IS_PY2:
 
 script_dir = os.path.dirname(os.path.realpath(__file__))
 
-DUMP_JS = os.path.join(script_dir, 'dump.js')
+DUMP_JS = os.path.join(script_dir, 'dump.com')
 
 User = 'root'
 Password = 'alpine'
@@ -259,6 +259,7 @@ def open_target_app(device, name_or_bundleid):
     bundle_identifier = ''
     for application in get_applications(device):
         if name_or_bundleid == application.identifier or name_or_bundleid == application.name:
+            print(application)
             pid = application.pid
             display_name = application.name
             bundle_identifier = application.identifier
